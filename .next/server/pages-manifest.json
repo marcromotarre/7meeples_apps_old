@@ -1,6 +1,14 @@
 {
   "/_app": "pages/_app.js",
+  "/api": "pages/api.js",
+  "/api/note/[id]": "pages/api/note/[id].js",
+  "/api/note": "pages/api/note.js",
+  "/api/user/[id]": "pages/api/user/[id].js",
+  "/": "pages/index.js",
+  "/notes/[id]": "pages/notes/[id].js",
+  "/notes": "pages/notes.js",
+  "/welcometo": "pages/welcometo.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/notes": "pages/notes.js"
+  "/404": "pages/404.html"
 }

@@ -1,0 +1,17 @@
+{
+  "overrides": [
+    {
+      "files": "*.jsx",
+      "options": {
+        "parser": "flow"
+      }
+    },
+    {
+        "files": "*.tsx",
+        "options": {
+          "parser": "flow"
+        }
+      }
+  ]
+
+}
