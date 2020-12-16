@@ -11,7 +11,7 @@ export default ({ ...props }) => {
   return (
     <div>
       <h1>{content.title}</h1>
-      <Link href="/notes"> Go to notes</Link>
+      <Link href="/notes"> Go tdo notes</Link>
     </div>
   );
 };
