@@ -1,4 +1,10 @@
 {
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "trailingComma": "all",
+  "quoteProps": "consistent",
+  "printWidth": 70,
   "overrides": [
     {
       "files": "*.jsx",
@@ -7,11 +13,10 @@
       }
     },
     {
-        "files": "*.tsx",
-        "options": {
-          "parser": "flow"
-        }
+      "files": "*.tsx",
+      "options": {
+        "parser": "flow"
       }
+    }
   ]
-
 }

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="272" height="65.367" viewBox="0 0 272 65.367">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.092" y1="0.909" x2="0.907" y2="0.09" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffc107"/>
+      <stop offset="0.221" stop-color="#f98d1c"/>
+      <stop offset="0.514" stop-color="#f1423b"/>
+      <stop offset="0.833" stop-color="#b93088"/>
+      <stop offset="0.994" stop-color="#9c27b0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.147" y1="0.854" x2="0.853" y2="0.146" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.147" y1="0.854" x2="0.853" y2="0.146" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Grupo_258" data-name="Grupo 258" transform="translate(110.575 -255)">
+    <g id="_x36_2-instagram" transform="translate(95.777 255)">
+      <g id="Grupo_216" data-name="Grupo 216" transform="translate(0 0)">
+        <path id="Trazado_171" data-name="Trazado 171" d="M68.011,22H43.428A20.381,20.381,0,0,0,23,42.377V66.848A20.5,20.5,0,0,0,43.428,87.367H68.011A20.68,20.68,0,0,0,88.648,66.848V42.377A20.56,20.56,0,0,0,68.011,22ZM82.463,66.848A14.471,14.471,0,0,1,68.011,81.182H43.428A14.412,14.412,0,0,1,29.045,66.848V42.377A14.411,14.411,0,0,1,43.428,28.045H68.011A14.471,14.471,0,0,1,82.463,42.377Z" transform="translate(-23 -22)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_172" data-name="Trazado 172" d="M155.563,137.947a16.314,16.314,0,1,0,16.388,16.314A16.352,16.352,0,0,0,155.563,137.947Zm0,26.51a10.2,10.2,0,1,1,10.242-10.2A10.233,10.233,0,0,1,155.563,164.457Z" transform="translate(-122.844 -121.648)" fill="url(#linear-gradient-2)"/>
+        <path id="Trazado_173" data-name="Trazado 173" d="M367.726,113.779a2.174,2.174,0,1,0,2.183,2.174A2.179,2.179,0,0,0,367.726,113.779Z" transform="translate(-317.389 -100.877)" fill="url(#linear-gradient-3)"/>
+      </g>
+    </g>
+    <text id="Siguenos_en" data-name="Siguenos en" transform="translate(-110.575 295)" fill="#feb90a" font-size="29" font-family="Poppins-Regular, Poppins"><tspan x="0" y="0">Sigue</tspan><tspan y="0" fill="#f35632">no</tspan><tspan y="0" fill="#a429a5">s en</tspan></text>
+  </g>
+</svg>

@@ -1,21 +1,41 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import Link from 'next/link'
+import { jsx } from 'theme-ui';
+import logoRed from '../assets/svg/logo-red.svg';
+import siguenosEnInstagram from '../assets/svg/siguenos-en-instagram.svg';
 
 const Nav = () => (
-  <header sx={{height: '60px', width: '100vw', bg: 'primary', borderBottom: '1px solid', borderColor: 'primary'}}>
-    <nav sx={{display: 'flex', alignItems: 'center',  justifyContent: 'space-between', variant: 'containers.page', height: '100%'}}>
-      <Link href="/">
-        <a sx={{fontWeight: 'bold', fontSize: 4, cursor: 'pointer'}}>Note App</a>
-      </Link>
-
-      <Link href="/notes">
-        <a sx={{color: 'text', fontSize: 3, cursor: 'pointer'}}>notes</a>
-      </Link>
-
-      <a sx={{color: 'text', fontSize: 3, cursor: 'pointer'}} href={process.env.HELP_APP_URL}>Help</a>
+  <header
+    sx={{
+      height: '8vh',
+      width: '100vw',
+    }}
+  >
+    <nav
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        variant: 'containers.page',
+        height: '100%',
+        padding: '0px 30px',
+      }}
+    >
+      <img
+        sx={{
+          height: '80%',
+        }}
+        src={logoRed}
+        alt="logo"
+      />
+      <img
+        sx={{
+          height: '60%',
+        }}
+        src={siguenosEnInstagram}
+        alt="siguenos en instagram"
+      />
     </nav>
   </header>
-)
+);
 
-export default Nav
+export default Nav;

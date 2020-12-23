@@ -1,7 +1,13 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../../src/components/WelcomeTo/app.tsx';
+import store from '../../src/app/store';
+import { Provider } from 'react-redux';
+
 export default () => {
   return (
-    <div>
-      <h1>Welcome to app: Soon</h1>
-    </div>
+    <Provider store={store}>
+      <App />
+    </Provider>
   );
 };
