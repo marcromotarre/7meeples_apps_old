@@ -22,6 +22,14 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "pages/notes/index.jsx",
+    "pages/notes/[id].jsx",
+    "pages/_app.jsx"
+  ],
+  "exclude": ["node_modules", "src/"]
 }

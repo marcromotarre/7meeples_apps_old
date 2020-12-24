@@ -9,7 +9,7 @@ import '../styles.css';
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div sx={{ height: '100vh', width: '100vw' }}>
         <Nav />
         <Component {...pageProps} />
       </div>
