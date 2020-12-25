@@ -26,8 +26,7 @@ const ConstructionCards = () => {
     >
       <div
         sx={{
-          width: '100%',
-          height: '100%',
+          width: '90%',
           display: 'grid',
         }}
       >
@@ -52,7 +51,8 @@ const ConstructionCards = () => {
       >
         <img
           sx={{
-            height: '50%',
+            maxHeight: '50%',
+            maxWidth: '80%',
             justifySelf: 'center',
             alignSelf: 'center',
           }}
@@ -61,7 +61,8 @@ const ConstructionCards = () => {
         />
         <img
           sx={{
-            height: '50%',
+            maxHeight: '50%',
+            maxWidth: '80%',
             justifySelf: 'center',
             alignSelf: 'center',
             border: '1px black',
@@ -71,7 +72,8 @@ const ConstructionCards = () => {
         />
         <img
           sx={{
-            height: '50%',
+            maxHeight: '50%',
+            maxWidth: '80%',
             justifySelf: 'center',
             alignSelf: 'center',
           }}
@@ -80,7 +82,8 @@ const ConstructionCards = () => {
         />
         <img
           sx={{
-            height: '50%',
+            maxHeight: '50%',
+            maxWidth: '80%',
             justifySelf: 'center',
             alignSelf: 'center',
           }}
@@ -89,7 +92,8 @@ const ConstructionCards = () => {
         />
         <img
           sx={{
-            height: '50%',
+            maxHeight: '50%',
+            maxWidth: '80%',
             justifySelf: 'center',
             alignSelf: 'center',
           }}
@@ -98,7 +102,8 @@ const ConstructionCards = () => {
         />
         <img
           sx={{
-            height: '50%',
+            maxHeight: '50%',
+            maxWidth: '80%',
             justifySelf: 'center',
             alignSelf: 'center',
           }}
@@ -109,7 +114,6 @@ const ConstructionCards = () => {
       <div
         sx={{
           width: '100%',
-          height: '100%',
           display: 'grid',
         }}
       >
