@@ -14,10 +14,10 @@ export default function App({ Component, pageProps }) {
         sx={{
           display: 'grid',
           gridTemplateColumns: '100%',
-          gridTemplateRows: '150px auto',
-          backgroundColor: 'red',
-          height: '100vh',
-          width: '100vw',
+          gridTemplateRows: '50px auto',
+          backgroundColor: 'blue',
+          height: '100%',
+          width: '100%',
         }}
       >
         <Nav />
