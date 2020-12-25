@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Grid } from 'theme-ui';
 import logoRed from '../assets/svg/logo-red.svg';
 import siguenosEnInstagram from '../assets/svg/siguenos-en-instagram.svg';
 
@@ -59,17 +59,30 @@ const ConstructionCards = () => {
           src={door1}
           alt="door 1"
         />
-        <img
+        <div
           sx={{
-            maxHeight: '50%',
-            maxWidth: '80%',
+            display: 'grid',
+            width: '80%',
             justifySelf: 'center',
+            borderRadius: '10px',
             alignSelf: 'center',
-            border: '1px black',
+            border: '1px solid black',
+            paddingBottom: '80%',
+            position: 'relative',
           }}
-          src={temp}
-          alt="temp agency"
-        />
+        >
+          <img
+            sx={{
+              position: 'absolute',
+              justifySelf: 'center',
+              alignSelf: 'center',
+              alignItems: 'center',
+              width: '80%',
+            }}
+            src={surveyor}
+            alt="piscina"
+          />
+        </div>
         <img
           sx={{
             maxHeight: '50%',
@@ -80,16 +93,30 @@ const ConstructionCards = () => {
           src={door13}
           alt="door 13"
         />
-        <img
+        <div
           sx={{
-            maxHeight: '50%',
-            maxWidth: '80%',
+            display: 'grid',
+            width: '80%',
             justifySelf: 'center',
+            borderRadius: '10px',
             alignSelf: 'center',
+            border: '1px solid black',
+            paddingBottom: '80%',
+            position: 'relative',
           }}
-          src={pool}
-          alt="piscina"
-        />
+        >
+          <img
+            sx={{
+              position: 'absolute',
+              justifySelf: 'center',
+              alignSelf: 'center',
+              alignItems: 'center',
+              width: '80%',
+            }}
+            src={surveyor}
+            alt="piscina"
+          />
+        </div>
         <img
           sx={{
             maxHeight: '50%',
@@ -100,16 +127,30 @@ const ConstructionCards = () => {
           src={door8}
           alt="door 8"
         />
-        <img
+        <div
           sx={{
-            maxHeight: '50%',
-            maxWidth: '80%',
+            display: 'grid',
+            width: '80%',
             justifySelf: 'center',
+            borderRadius: '10px',
             alignSelf: 'center',
+            border: '1px solid black',
+            paddingBottom: '80%',
+            position: 'relative',
           }}
-          src={temp}
-          alt="temp agency"
-        />
+        >
+          <img
+            sx={{
+              position: 'absolute',
+              justifySelf: 'center',
+              alignSelf: 'center',
+              alignItems: 'center',
+              width: '80%',
+            }}
+            src={surveyor}
+            alt="piscina"
+          />
+        </div>
       </div>
       <div
         sx={{

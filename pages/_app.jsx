@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }) {
           display: 'grid',
           gridTemplateColumns: '100%',
           gridTemplateRows: '50px auto',
-          backgroundColor: 'blue',
           height: '100%',
           width: '100%',
         }}

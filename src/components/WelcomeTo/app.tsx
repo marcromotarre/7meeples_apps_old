@@ -34,9 +34,6 @@ const App = () => {
           'city-plans construction-cards'
         `,
         ],
-        height: '100%',
-        width: '100%',
-        backgroundColor: 'red',
       }}
     >
       <CityPlans></CityPlans>
