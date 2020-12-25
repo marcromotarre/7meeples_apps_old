@@ -4,38 +4,31 @@ import logoRed from '../assets/svg/logo-red.svg';
 import siguenosEnInstagram from '../assets/svg/siguenos-en-instagram.svg';
 
 const Nav = () => (
-  <header
+  <nav
     sx={{
-      height: '8vh',
-      width: '100vw',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      variant: 'containers.page',
+      height: '100%',
+      width: '100%',
     }}
   >
-    <nav
+    <img
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        variant: 'containers.page',
-        height: '100%',
-        padding: '0px 30px',
+        height: '80%',
       }}
-    >
-      <img
-        sx={{
-          height: '80%',
-        }}
-        src={logoRed}
-        alt="logo"
-      />
-      <img
-        sx={{
-          height: '60%',
-        }}
-        src={siguenosEnInstagram}
-        alt="siguenos en instagram"
-      />
-    </nav>
-  </header>
+      src={logoRed}
+      alt="logo"
+    />
+    <img
+      sx={{
+        height: '60%',
+      }}
+      src={siguenosEnInstagram}
+      alt="siguenos en instagram"
+    />
+  </nav>
 );
 
 export default Nav;
