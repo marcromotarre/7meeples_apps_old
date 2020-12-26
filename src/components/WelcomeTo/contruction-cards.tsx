@@ -27,6 +27,7 @@ import {
 const ConstructionCards = () => {
   const dispatch = useDispatch();
   const next = () => {
+    console.log('mexr');
     dispatch(nextTurnAction());
   };
   return (
@@ -174,7 +175,7 @@ const ConstructionCards = () => {
           display: 'grid',
         }}
       >
-        <button>
+        <button onClick={() => next()}>
           <img
             sx={{
               width: '80%',

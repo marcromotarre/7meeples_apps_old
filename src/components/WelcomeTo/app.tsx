@@ -12,6 +12,8 @@ import missionL1 from '../../assets/svg/welcometo/missions/mission-l1-1.svg';
 import missionL2 from '../../assets/svg/welcometo/missions/mission-l1-1.svg';
 import missionL3 from '../../assets/svg/welcometo/missions/mission-l1-1.svg';
 
+import Nav from '../nav';
+
 import pool from '../../assets/svg/welcometo/pool-manufacturer.svg';
 import surveyor from '../../assets/svg/welcometo/surveyor.svg';
 import temp from '../../assets/svg/welcometo/temp-agency.svg';
@@ -70,10 +72,12 @@ const App = () => {
     <div
       sx={{
         display: 'grid',
+        position: 'fixed',
         gridTemplateColumns: ['100%', '30% 70%'],
-        gridTemplateRows: ['20% 10% 70%', '10% 90%'],
+        gridTemplateRows: ['50px 20% 10% auto', '10% 90%'],
         gridTemplateAreas: [
           `
+            'nav'
             'city-plans'
             'next-effects'
             'construction-cards'
@@ -85,6 +89,7 @@ const App = () => {
         ],
       }}
     >
+      <Nav />
       <CityPlans></CityPlans>
       <NextEffects></NextEffects>
       <ConstructionCards></ConstructionCards>

@@ -5,4 +5,15 @@ div#__next,
 div#__next > div,
 div#__next > div > div {
   height: 100%;
+  align-items: stretch;
+}
+
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
 }

@@ -12,14 +12,15 @@ export default function App({ Component, pageProps }) {
       <div
         className="main-class"
         sx={{
-          display: 'grid',
-          gridTemplateColumns: '100%',
-          gridTemplateRows: '50px auto',
-          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          backgroundColor: 'blue',
+          alignItems: 'stretch',
           width: '100%',
+          height: '100vh',
+          position: 'fixed',
         }}
       >
-        <Nav />
         <Component {...pageProps} />
       </div>
     </ThemeProvider>

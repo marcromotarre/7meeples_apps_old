@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { useSelector } from "react-redux";
-import Number from "./Number";
-import Effect from "./Effect";
+import { useSelector } from 'react-redux';
+import Number from './Number';
+import Effect from './Effect';
 
 export const ActualCardsContainer = styled.div`
   justify-self: center;
@@ -20,12 +20,11 @@ export default function ActualCards({ className }) {
   const deck = useSelector((state) => state.deck);
   const discardDeck = useSelector((state) => state.discardDeck);
 
-  console.log(deck);
   const actualDoorCards = deck.map((subDeck) =>
-    subDeck[0] ? subDeck[0].number : undefined
+    subDeck[0] ? subDeck[0].number : undefined,
   );
   const actualEffectCards = discardDeck.map((subDeck) =>
-    subDeck[0] ? subDeck[0].effect : undefined
+    subDeck[0] ? subDeck[0].effect : undefined,
   );
 
   return (
@@ -34,7 +33,11 @@ export default function ActualCards({ className }) {
         <Number key={index} number={actualDoorCard} />
       ))}
       {actualEffectCards.map((actualEffectCard, index) => (
-        <Effect key={index} effect={actualEffectCard} color="#FF0000" />
+        <Effect
+          key={index}
+          effect={actualEffectCard}
+          color="#FF0000"
+        />
       ))}
     </ActualCardsContainer>
   );
