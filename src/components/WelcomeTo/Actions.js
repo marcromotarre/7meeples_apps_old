@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   nextTurn as nextTurnAction,
   reshuffleDeck as reshuffleDeckAction,
@@ -8,10 +8,10 @@ import {
   goEnd as goEndAction,
   cancelReset as cancelResetAction,
   addEmptyCardToDiscardDeck as addEmptyCardToDiscardDeckAction,
-} from "../../actions";
+} from '../../actions';
 
-import { cards } from "../../data/deck.js";
-import SVGIcon from "./SVGIcon";
+import { cards } from '../../data/deck.js';
+import SVGIcon from './SVGIcon';
 
 export const ActionsContainer = styled.div`
   grid-area: m-actions;
@@ -48,7 +48,7 @@ export default function Actions() {
   const deck = useSelector((state) => state.deck);
   const discardDeck = useSelector((state) => state.discardDeck);
   const previousMovementsDone = useSelector(
-    (state) => state.previousMovementsDone
+    (state) => state.previousMovementsDone,
   );
   const askReset = useSelector((state) => state.askReset);
 
@@ -59,11 +59,10 @@ export default function Actions() {
   const goToPrevious = () => dispatch(goPreviousAction());
 
   const resetDeck = () => {
-    console.log(deck.map((singleDeck) => singleDeck[0].number));
     dispatch(
       addEmptyCardToDiscardDeckAction({
         numbers: deck.map((singleDeck) => singleDeck[0].number),
-      })
+      }),
     );
     dispatch(cancelResetAction());
     const shuffledCards = cards
@@ -77,7 +76,7 @@ export default function Actions() {
           shuffledCards.slice(27, 27 * 2),
           shuffledCards.slice(27 * 2, 27 * 3),
         ],
-      })
+      }),
     );
   };
 
@@ -86,7 +85,9 @@ export default function Actions() {
   };
 
   const shuffle = () => {
-    const lastThreeCards = discardDeck.map((singleDeck) => singleDeck[0]);
+    const lastThreeCards = discardDeck.map(
+      (singleDeck) => singleDeck[0],
+    );
     const cardWithoutLastThreeCards = cards.filter((card) => {
       return !lastThreeCards.includes(card);
     });
@@ -101,7 +102,7 @@ export default function Actions() {
           shuffledCards.slice(26, 26 * 2),
           shuffledCards.slice(26 * 2, 26 * 3),
         ],
-      })
+      }),
     );
   };
   const goToEnd = () => {
@@ -120,24 +121,24 @@ export default function Actions() {
       <SubActionsContainer>
         {canGoPrevious && (
           <button onClick={goToPrevious}>
-            <SVGIcon name="previous" height={52} width={52} />{" "}
+            <SVGIcon name="previous" height={52} width={52} />{' '}
           </button>
         )}
       </SubActionsContainer>
       <SubActionsContainer>
         {canShuffleDeck && (
           <button onClick={shuffle}>
-            <SVGIcon name="refresh" height={52} width={52} />{" "}
+            <SVGIcon name="refresh" height={52} width={52} />{' '}
           </button>
         )}
         {canResetDeck && (
           <button onClick={resetDeck}>
-            <SVGIcon name="refresh" height={52} width={52} />{" "}
+            <SVGIcon name="refresh" height={52} width={52} />{' '}
           </button>
         )}
         {canDiscardResetAction && (
           <button onClick={notResetDeck}>
-            <SVGIcon name="not_refresh" height={52} width={52} />{" "}
+            <SVGIcon name="not_refresh" height={52} width={52} />{' '}
           </button>
         )}
       </SubActionsContainer>
@@ -149,7 +150,7 @@ export default function Actions() {
         )}
         {canGoEnd && (
           <button onClick={goToEnd}>
-            <SVGIcon name="end" height={52} width={52} />{" "}
+            <SVGIcon name="end" height={52} width={52} />{' '}
           </button>
         )}
       </SubActionsContainer>

@@ -13,8 +13,22 @@ import goNext from '../../assets/svg/welcometo/go-next.svg';
 import door1 from '../../assets/svg/welcometo/doors/door-1.svg';
 import door13 from '../../assets/svg/welcometo/doors/door-13.svg';
 import door8 from '../../assets/svg/welcometo/doors/door-8.svg';
+import { useSelector, useDispatch } from 'react-redux';
+
+import {
+  nextTurn as nextTurnAction,
+  reshuffleDeck as reshuffleDeckAction,
+  goPrevious as goPreviousAction,
+  goEnd as goEndAction,
+  cancelReset as cancelResetAction,
+  addEmptyCardToDiscardDeck as addEmptyCardToDiscardDeckAction,
+} from '../../actions';
 
 const ConstructionCards = () => {
+  const dispatch = useDispatch();
+  const next = () => {
+    dispatch(nextTurnAction());
+  };
   return (
     <div
       className="construction-cards"
@@ -159,6 +173,7 @@ const ConstructionCards = () => {
         }}
       >
         <img
+          onClick={next}
           sx={{
             width: '80%',
             justifySelf: 'center',

@@ -15,8 +15,57 @@ import missionL3 from '../../assets/svg/welcometo/missions/mission-l1-1.svg';
 import pool from '../../assets/svg/welcometo/pool-manufacturer.svg';
 import surveyor from '../../assets/svg/welcometo/surveyor.svg';
 import temp from '../../assets/svg/welcometo/temp-agency.svg';
+import { useSelector, useDispatch } from 'react-redux';
+
+import {
+  resetDeck,
+  setCityPlans,
+  nextTurn as nextTurnAction,
+  reshuffleDeck as reshuffleDeckAction,
+  goPrevious as goPreviousAction,
+  goEnd as goEndAction,
+  cancelReset as cancelResetAction,
+  addEmptyCardToDiscardDeck as addEmptyCardToDiscardDeckAction,
+} from '../../actions';
+import { cards } from '../../data/deck';
+import { cityPlans as cityPlanCards } from '../../data/city-plans';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  const shuffledCards = cards
+    .map((a) => [Math.random(), a])
+    .sort((a, b) => a[0] - b[0])
+    .map((a) => a[1]);
+
+  const cityPlans = [
+    cityPlanCards
+      .filter((cityPlan) => cityPlan.level === '1')
+      .map((a) => [Math.random(), a])
+      .sort((a, b) => a[0] - b[0])
+      .map((a) => a[1])[0],
+    cityPlanCards
+      .filter((cityPlan) => cityPlan.level === '2')
+      .map((a) => [Math.random(), a])
+      .sort((a, b) => a[0] - b[0])
+      .map((a) => a[1])[0],
+    cityPlanCards
+      .filter((cityPlan) => cityPlan.level === '3')
+      .map((a) => [Math.random(), a])
+      .sort((a, b) => a[0] - b[0])
+      .map((a) => a[1])[0],
+  ];
+
+  dispatch(
+    resetDeck({
+      cards: [
+        shuffledCards.slice(0, 27),
+        shuffledCards.slice(27, 27 * 2),
+        shuffledCards.slice(27 * 2, 27 * 3),
+      ],
+    }),
+  );
+  dispatch(setCityPlans({ cityPlans }));
   return (
     <div
       sx={{
