@@ -44,15 +44,17 @@ const ConstructionCards = () => {
           display: 'grid',
         }}
       >
-        <img
-          sx={{
-            width: '80%',
-            justifySelf: 'center',
-            alignSelf: 'center',
-          }}
-          src={goPrevious}
-          alt="anterior"
-        />
+        <button>
+          <img
+            sx={{
+              width: '80%',
+              justifySelf: 'center',
+              alignSelf: 'center',
+            }}
+            src={goPrevious}
+            alt="anterior"
+          />
+        </button>
       </div>
       <div
         sx={{
@@ -172,16 +174,17 @@ const ConstructionCards = () => {
           display: 'grid',
         }}
       >
-        <img
-          onClick={next}
-          sx={{
-            width: '80%',
-            justifySelf: 'center',
-            alignSelf: 'center',
-          }}
-          src={goNext}
-          alt="siguiente"
-        />
+        <button>
+          <img
+            sx={{
+              width: '80%',
+              justifySelf: 'center',
+              alignSelf: 'center',
+            }}
+            src={goNext}
+            alt="siguiente"
+          />
+        </button>
       </div>
     </div>
   );
