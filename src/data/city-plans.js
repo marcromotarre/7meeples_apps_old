@@ -1,177 +1,203 @@
+import M_1_0_T from '../assets/svg/welcometo/city-plans/M_1_0_T.svg';
+import M_1_0_F from '../assets/svg/welcometo/city-plans/M_1_0_F.svg';
+import M_1_1_T from '../assets/svg/welcometo/city-plans/M_1_1_T.svg';
+import M_1_1_F from '../assets/svg/welcometo/city-plans/M_1_1_F.svg';
+import M_1_2_T from '../assets/svg/welcometo/city-plans/M_1_2_T.svg';
+import M_1_2_F from '../assets/svg/welcometo/city-plans/M_1_2_F.svg';
+import M_1_3_T from '../assets/svg/welcometo/city-plans/M_1_3_T.svg';
+import M_1_3_F from '../assets/svg/welcometo/city-plans/M_1_3_F.svg';
+import M_1_4_T from '../assets/svg/welcometo/city-plans/M_1_4_T.svg';
+import M_1_4_F from '../assets/svg/welcometo/city-plans/M_1_4_F.svg';
+import M_1_5_T from '../assets/svg/welcometo/city-plans/M_1_5_T.svg';
+import M_1_5_F from '../assets/svg/welcometo/city-plans/M_1_5_F.svg';
+import M_1_6_T from '../assets/svg/welcometo/city-plans/M_1_6_T.svg';
+import M_1_6_F from '../assets/svg/welcometo/city-plans/M_1_6_F.svg';
+import M_1_7_T from '../assets/svg/welcometo/city-plans/M_1_7_T.svg';
+import M_1_7_F from '../assets/svg/welcometo/city-plans/M_1_7_F.svg';
+import M_1_8_T from '../assets/svg/welcometo/city-plans/M_1_8_T.svg';
+import M_1_8_F from '../assets/svg/welcometo/city-plans/M_1_8_F.svg';
+import M_1_9_T from '../assets/svg/welcometo/city-plans/M_1_9_T.svg';
+import M_1_9_F from '../assets/svg/welcometo/city-plans/M_1_9_F.svg';
+import M_1_10_T from '../assets/svg/welcometo/city-plans/M_1_10_T.svg';
+import M_1_10_F from '../assets/svg/welcometo/city-plans/M_1_10_F.svg';
+
+import M_2_0_T from '../assets/svg/welcometo/city-plans/M_2_0_T.svg';
+import M_2_0_F from '../assets/svg/welcometo/city-plans/M_2_0_F.svg';
+import M_2_1_T from '../assets/svg/welcometo/city-plans/M_2_1_T.svg';
+import M_2_1_F from '../assets/svg/welcometo/city-plans/M_2_1_F.svg';
+import M_2_2_T from '../assets/svg/welcometo/city-plans/M_2_2_T.svg';
+import M_2_2_F from '../assets/svg/welcometo/city-plans/M_2_2_F.svg';
+import M_2_3_T from '../assets/svg/welcometo/city-plans/M_2_3_T.svg';
+import M_2_3_F from '../assets/svg/welcometo/city-plans/M_2_3_F.svg';
+import M_2_4_T from '../assets/svg/welcometo/city-plans/M_2_4_T.svg';
+import M_2_4_F from '../assets/svg/welcometo/city-plans/M_2_4_F.svg';
+import M_2_5_T from '../assets/svg/welcometo/city-plans/M_2_5_T.svg';
+import M_2_5_F from '../assets/svg/welcometo/city-plans/M_2_5_F.svg';
+import M_2_6_T from '../assets/svg/welcometo/city-plans/M_2_6_T.svg';
+import M_2_6_F from '../assets/svg/welcometo/city-plans/M_2_6_F.svg';
+import M_2_7_T from '../assets/svg/welcometo/city-plans/M_2_7_T.svg';
+import M_2_7_F from '../assets/svg/welcometo/city-plans/M_2_7_F.svg';
+import M_2_8_T from '../assets/svg/welcometo/city-plans/M_2_8_T.svg';
+import M_2_8_F from '../assets/svg/welcometo/city-plans/M_2_8_F.svg';
+import M_2_9_T from '../assets/svg/welcometo/city-plans/M_2_9_T.svg';
+import M_2_9_F from '../assets/svg/welcometo/city-plans/M_2_9_F.svg';
+import M_2_10_T from '../assets/svg/welcometo/city-plans/M_2_10_T.svg';
+import M_2_10_F from '../assets/svg/welcometo/city-plans/M_2_10_F.svg';
+
+import M_3_0_T from '../assets/svg/welcometo/city-plans/M_3_0_T.svg';
+import M_3_0_F from '../assets/svg/welcometo/city-plans/M_3_0_F.svg';
+import M_3_1_T from '../assets/svg/welcometo/city-plans/M_3_1_T.svg';
+import M_3_1_F from '../assets/svg/welcometo/city-plans/M_3_1_F.svg';
+import M_3_2_T from '../assets/svg/welcometo/city-plans/M_3_2_T.svg';
+import M_3_2_F from '../assets/svg/welcometo/city-plans/M_3_2_F.svg';
+import M_3_3_T from '../assets/svg/welcometo/city-plans/M_3_3_T.svg';
+import M_3_3_F from '../assets/svg/welcometo/city-plans/M_3_3_F.svg';
+import M_3_4_T from '../assets/svg/welcometo/city-plans/M_3_4_T.svg';
+import M_3_4_F from '../assets/svg/welcometo/city-plans/M_3_4_F.svg';
+import M_3_5_T from '../assets/svg/welcometo/city-plans/M_3_5_T.svg';
+import M_3_5_F from '../assets/svg/welcometo/city-plans/M_3_5_F.svg';
+
 export const cityPlans = [
-    {
-        level: "1",
-        name: "city-plan-level-1--1",
-        advanced: false,
-        points: [10,6]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--2",
-        advanced: false,
-        points: [6,3]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--3",
-        advanced: false,
-        points: [8,4]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--4",
-        advanced: false,
-        points: [8,4]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--5",
-        advanced: false,
-        points: [8,4]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--6",
-        advanced: false,
-        points: [8,4]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--7",
-        advanced: true,
-        points: [7,4]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--8",
-        advanced: true,
-        points: [6,3]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--9",
-        advanced: true,
-        points: [8,3]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--10",
-        advanced: true,
-        points: [6,3]
-    },
-    {
-        level: "1",
-        name: "city-plan-level-1--11",
-        advanced: true,
-        points: [8,4]
-    },
+  {
+    level: 1,
+    image: M_1_0_T,
+    image_completed: M_1_0_F,
+  },
+  {
+    level: 2,
+    image: M_1_1_T,
+    image_completed: M_1_1_F,
+  },
+  {
+    level: 3,
+    image: M_1_2_T,
+    image_completed: M_1_2_F,
+  },
+  {
+    level: '1',
+    image: M_1_3_T,
+    image_completed: M_1_3_F,
+  },
+  {
+    level: '1',
+    image: M_1_4_T,
+    image_completed: M_1_4_F,
+  },
+  {
+    level: '1',
+    image: M_1_5_T,
+    image_completed: M_1_5_F,
+  },
+  {
+    level: '1',
+    image: M_1_6_T,
+    image_completed: M_1_6_F,
+  },
+  {
+    level: '1',
+    image: M_1_7_T,
+    image_completed: M_1_7_F,
+  },
+  {
+    level: '1',
+    image: M_1_8_T,
+    image_completed: M_1_8_F,
+  },
+  {
+    level: '1',
+    image: M_1_9_T,
+    image_completed: M_1_9_F,
+  },
+  {
+    level: '1',
+    image: M_1_10_T,
+    image_completed: M_1_10_F,
+  },
 
+  {
+    level: '2',
+    image: M_2_0_T,
+    image_completed: M_2_0_F,
+  },
+  {
+    level: '2',
+    image: M_2_1_T,
+    image_completed: M_2_1_F,
+  },
+  {
+    level: '2',
+    image: M_2_2_T,
+    image_completed: M_2_2_F,
+  },
+  {
+    level: '2',
+    image: M_2_3_T,
+    image_completed: M_2_3_F,
+  },
+  {
+    level: '2',
+    image: M_2_4_T,
+    image_completed: M_2_4_F,
+  },
+  {
+    level: '2',
+    image: M_2_5_T,
+    image_completed: M_2_5_F,
+  },
+  {
+    level: '2',
+    image: M_2_6_T,
+    image_completed: M_2_6_F,
+  },
+  {
+    level: '2',
+    image: M_2_7_T,
+    image_completed: M_2_7_F,
+  },
+  {
+    level: '2',
+    image: M_2_8_T,
+    image_completed: M_2_8_F,
+  },
+  {
+    level: '2',
+    image: M_2_9_T,
+    image_completed: M_2_9_F,
+  },
+  {
+    level: '2',
+    image: M_2_10_T,
+    image_completed: M_2_10_F,
+  },
 
-    {
-        level: "2",
-        name: "city-plan-level-2--1",
-        advanced: false,
-        points: [10,6]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--2",
-        advanced: false,
-        points: [12,7]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--3",
-        advanced: false,
-        points: [8,4]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--4",
-        advanced: false,
-        points: [11,6]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--5",
-        advanced: false,
-        points: [9,5]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--6",
-        advanced: false,
-        points: [9,5]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--7",
-        advanced: true,
-        points: [10,5]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--8",
-        advanced: true,
-        points: [7,4]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--9",
-        advanced: true,
-        points: [8,3]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--10",
-        advanced: true,
-        points: [10,5]
-    },
-    {
-        level: "2",
-        name: "city-plan-level-2--11",
-        advanced: true,
-        points: [7,4]
-    },
-
-
-
-    {
-        level: "3",
-        name: "city-plan-level-3--1",
-        advanced: false,
-        points: [10,6]
-    },
-    {
-        level: "3",
-        name: "city-plan-level-3--2",
-        advanced: false,
-        points: [12,7]
-    },
-    {
-        level: "3",
-        name: "city-plan-level-3--3",
-        advanced: false,
-        points: [8,4]
-    },
-    {
-        level: "3",
-        name: "city-plan-level-3--4",
-        advanced: false,
-        points: [11,6]
-    },
-    {
-        level: "3",
-        name: "city-plan-level-3--5",
-        advanced: false,
-        points: [9,5]
-    },
-    {
-        level: "3",
-        name: "city-plan-level-3--6",
-        advanced: false,
-        points: [9,5]
-    }
-
-
-]
+  {
+    level: '3',
+    image: M_3_0_T,
+    image_completed: M_3_0_F,
+  },
+  {
+    level: '3',
+    image: M_3_1_T,
+    image_completed: M_3_1_F,
+  },
+  {
+    level: '3',
+    image: M_3_2_T,
+    image_completed: M_3_2_F,
+  },
+  {
+    level: '3',
+    image: M_3_3_T,
+    image_completed: M_3_3_F,
+  },
+  {
+    level: '3',
+    image: M_3_4_T,
+    image_completed: M_3_4_F,
+  },
+  {
+    level: '3',
+    image: M_3_5_T,
+    image_completed: M_3_5_F,
+  },
+];

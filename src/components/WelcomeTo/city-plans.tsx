@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import missionL1 from '../../assets/svg/welcometo/city-plans/mission-l1-1.svg';
-import missionL2 from '../../assets/svg/welcometo/city-plans/mission-l1-1.svg';
-import missionL3 from '../../assets/svg/welcometo/city-plans/mission-l1-1.svg';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { changeCityPlanState as changeCityPlanStateAction } from '../../actions';
 const CityPlans = () => {
   const cityPlansCss = {
     width: '80%',
@@ -11,6 +10,23 @@ const CityPlans = () => {
     justifySelf: 'center',
     alignSelf: 'center',
   };
+
+  const cityPlans = useSelector((state) => state.cityPlans);
+  const dispatch = useDispatch();
+  const changeCityPlanState = (level) => {
+    dispatch(changeCityPlanStateAction({ level }));
+  };
+
+  const cityPlanLevel1 = cityPlans.find(
+    (cityPlan) => cityPlan.level === 1,
+  );
+  const cityPlanLevel2 = cityPlans.find(
+    (cityPlan) => cityPlan.level === 2,
+  );
+  const cityPlanLevel3 = cityPlans.find(
+    (cityPlan) => cityPlan.level === 3,
+  );
+
   return (
     <div
       className="city-plans"
@@ -23,9 +39,36 @@ const CityPlans = () => {
         alignItems: 'center',
       }}
     >
-      <img sx={cityPlansCss} src={missionL1} alt="mission Level 1" />
-      <img sx={cityPlansCss} src={missionL2} alt="mission Level 2" />
-      <img sx={cityPlansCss} src={missionL3} alt="mission Level 3" />
+      <img
+        onClick={() => changeCityPlanState(1)}
+        sx={cityPlansCss}
+        src={
+          cityPlanLevel1.active
+            ? cityPlanLevel1.image
+            : cityPlanLevel1.image_completed
+        }
+        alt="mission Level 1"
+      />
+      <img
+        onClick={() => changeCityPlanState(2)}
+        sx={cityPlansCss}
+        src={
+          cityPlanLevel2.active
+            ? cityPlanLevel2.image
+            : cityPlanLevel2.image_completed
+        }
+        alt="mission Level 2"
+      />
+      <img
+        onClick={() => changeCityPlanState(3)}
+        sx={cityPlansCss}
+        src={
+          cityPlanLevel3.active
+            ? cityPlanLevel3.image
+            : cityPlanLevel3.image_completed
+        }
+        alt="mission Level 3"
+      />
     </div>
   );
 };

@@ -46,33 +46,39 @@ const NextEffects = () => {
           borderRadius: '10px',
         }}
       >
-        <img
-          sx={{
-            height: '50%',
-            justifySelf: 'center',
-            alignSelf: 'center',
-          }}
-          src={nextEffect0.image}
-          alt="pool manufacturer"
-        />
-        <img
-          sx={{
-            height: '50%',
-            justifySelf: 'center',
-            alignSelf: 'center',
-          }}
-          src={nextEffect1.image}
-          alt="surveyor"
-        />
-        <img
-          sx={{
-            height: '50%',
-            justifySelf: 'center',
-            alignSelf: 'center',
-          }}
-          src={nextEffect2.image}
-          alt="temp agency"
-        />
+        {nextEffect0 && (
+          <img
+            sx={{
+              height: '50%',
+              justifySelf: 'center',
+              alignSelf: 'center',
+            }}
+            src={nextEffect0.image}
+            alt="pool manufacturer"
+          />
+        )}
+        {nextEffect1 && (
+          <img
+            sx={{
+              height: '50%',
+              justifySelf: 'center',
+              alignSelf: 'center',
+            }}
+            src={nextEffect1.image}
+            alt="surveyor"
+          />
+        )}
+        {nextEffect2 && (
+          <img
+            sx={{
+              height: '50%',
+              justifySelf: 'center',
+              alignSelf: 'center',
+            }}
+            src={nextEffect2.image}
+            alt="temp agency"
+          />
+        )}
       </div>
     </div>
   );
