@@ -287,7 +287,6 @@ const ConstructionCards = () => {
           onClick={() => next()}
           sx={{
             width: '70%',
-            height: '70%',
             justifySelf: 'center',
             alignSelf: 'center',
             opacity:
