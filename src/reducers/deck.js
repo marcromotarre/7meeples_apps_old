@@ -29,7 +29,6 @@ function deckReducer(
 ) {
   switch (type) {
     case 'SET_CITY_PLANS':
-      console.log(payload);
       return {
         ...state,
         cityPlans: payload.cityPlans.map((cityPlan) => ({

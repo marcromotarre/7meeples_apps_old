@@ -17,3 +17,8 @@ body {
 html {
   height: -webkit-fill-available;
 }
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand/Quicksand-VariableFont_wght.ttf');
+}

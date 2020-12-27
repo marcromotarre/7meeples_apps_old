@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid } from 'theme-ui';
+import { jsx, Grid, Flex } from 'theme-ui';
 import logoRed from '../assets/svg/logo-red.svg';
 import siguenosEnInstagram from '../assets/svg/siguenos-en-instagram.svg';
 
@@ -26,6 +26,9 @@ const ConstructionCards = () => {
   const dispatch = useDispatch();
   const deck = useSelector((state) => state.deck);
   const discardDeck = useSelector((state) => state.discardDeck);
+  const previousMovementsDone = useSelector(
+    (state) => state.previousMovementsDone,
+  );
 
   const actualDoorCards = deck.map((subDeck) =>
     subDeck[0] ? subDeck[0].number : undefined,
@@ -35,12 +38,17 @@ const ConstructionCards = () => {
   );
 
   const next = () => {
-    if (canGoNext) {
+    if (canGoNext && !previousMovementsDone) {
       dispatch(nextTurnAction());
     }
   };
 
+  const previouslyNext = () => {
+    dispatch(nextTurnAction());
+  };
+
   const previous = () => {
+    console.log('previous');
     if (canGoPrevious) {
       dispatch(goPreviousAction());
     }
@@ -59,22 +67,46 @@ const ConstructionCards = () => {
       }}
     >
       <div
+        className="actions-left"
         sx={{
-          width: '90%',
+          width: '100%',
           display: 'grid',
+          gridTemplateColumns: '100%',
+          gridTemplateRows: '20% 20% 20% 20% 20%',
+
+          gridTemplateAreas: `
+          '.'
+          '.'
+          'go-previous'
+          'go-previously-next'
+          '.'`,
         }}
       >
         <img
           onClick={previous}
           sx={{
-            width: '80%',
+            width: '70%',
             justifySelf: 'center',
             alignSelf: 'center',
             opacity: canGoPrevious ? '1' : '0.2',
+            gridArea: 'go-previous',
           }}
           src={goPrevious}
           alt="anterior"
         />
+        {previousMovementsDone && (
+          <img
+            onClick={previouslyNext}
+            sx={{
+              gridArea: 'go-previously-next',
+              alignSelf: 'center',
+              justifySelf: 'center',
+              width: '70%',
+            }}
+            src={goNext}
+            alt="mover hacia adelante"
+          />
+        )}
       </div>
       <div
         sx={{
@@ -239,15 +271,28 @@ const ConstructionCards = () => {
         sx={{
           width: '100%',
           display: 'grid',
+          gridTemplateColumns: '100%',
+          gridTemplateRows: '20% 20% 20% 20% 20%',
+
+          gridTemplateAreas: `
+        '.'
+        '.'
+        'go-next'
+        '.'
+        '.'
+      `,
         }}
       >
         <img
           onClick={() => next()}
           sx={{
-            width: '80%',
+            width: '70%',
+            height: '70%',
             justifySelf: 'center',
             alignSelf: 'center',
-            opacity: canGoNext ? '1' : '0.2',
+            opacity:
+              canGoNext && !previousMovementsDone ? '1' : '0.2',
+            gridArea: 'go-next',
           }}
           src={goNext}
           alt="siguiente"
