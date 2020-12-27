@@ -44,11 +44,12 @@ const ConstructionCards = () => {
   };
 
   const previouslyNext = () => {
-    dispatch(nextTurnAction());
+    if (previousMovementsDone) {
+      dispatch(nextTurnAction());
+    }
   };
 
   const previous = () => {
-    console.log('previous');
     if (canGoPrevious) {
       dispatch(goPreviousAction());
     }
@@ -94,19 +95,18 @@ const ConstructionCards = () => {
           src={goPrevious}
           alt="anterior"
         />
-        {previousMovementsDone && (
-          <img
-            onClick={previouslyNext}
-            sx={{
-              gridArea: 'go-previously-next',
-              alignSelf: 'center',
-              justifySelf: 'center',
-              width: '70%',
-            }}
-            src={goNext}
-            alt="mover hacia adelante"
-          />
-        )}
+        <img
+          onClick={previouslyNext}
+          sx={{
+            gridArea: 'go-previously-next',
+            alignSelf: 'center',
+            justifySelf: 'center',
+            width: '70%',
+            opacity: previousMovementsDone ? '1' : '0',
+          }}
+          src={goNext}
+          alt="mover hacia adelante"
+        />
       </div>
       <div
         sx={{
