@@ -12,8 +12,9 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>My page title</title>
         <meta
+          meta
           name="viewport"
-          content="initial-scale=1.0, width=device-width"
+          content="width=device-width, user-scalable=no"
         />
       </Head>
       <div
