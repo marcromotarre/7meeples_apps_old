@@ -3,16 +3,19 @@ import { jsx } from 'theme-ui';
 import { ThemeProvider } from 'theme-ui';
 import theme from '../theme';
 import Nav from '../src/components/nav';
-
+import Head from 'next/head';
 import '../styles.css';
 
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-      />
+      <Head>
+        <title>My page title</title>
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+        />
+      </Head>
       <div
         className="main-class"
         sx={{
