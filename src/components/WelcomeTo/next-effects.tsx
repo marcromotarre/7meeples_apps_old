@@ -6,23 +6,30 @@ import siguenosEnInstagram from '../assets/svg/siguenos-en-instagram.svg';
 import { effects } from '../../data/effects';
 import { useSelector } from 'react-redux';
 import { couldStartTrivia } from 'typescript';
+import { useEffect, useState } from 'react';
 
 const NextEffects = () => {
   const deck = useSelector((state) => state.deck);
-  const nextEffects = deck.map((deckPile) =>
-    deckPile[0] ? deckPile[0].effect : undefined,
-  );
-  const nextEffect0 = effects.filter(
+  const [nextEffects, setNextEffects] = useState([]);
+
+  useEffect(() => {
+    const nextEffects = deck.map((deckPile) =>
+      deckPile[0] ? deckPile[0].effect : undefined,
+    );
+    setNextEffects(nextEffects);
+  }, [deck]);
+
+  const nextEffect0 = effects.find(
     (symbol) => symbol.name === nextEffects[0],
-  )[0];
+  );
 
-  const nextEffect1 = effects.filter(
+  const nextEffect1 = effects.find(
     (symbol) => symbol.name === nextEffects[1],
-  )[0];
+  );
 
-  const nextEffect2 = effects.filter(
+  const nextEffect2 = effects.find(
     (symbol) => symbol.name === nextEffects[2],
-  )[0];
+  );
 
   return (
     <div
@@ -54,7 +61,7 @@ const NextEffects = () => {
               alignSelf: 'center',
             }}
             src={nextEffect0.image}
-            alt="pool manufacturer"
+            alt={nextEffect0.name}
           />
         )}
         {nextEffect1 && (
@@ -65,7 +72,7 @@ const NextEffects = () => {
               alignSelf: 'center',
             }}
             src={nextEffect1.image}
-            alt="surveyor"
+            alt={nextEffect1.name}
           />
         )}
         {nextEffect2 && (
@@ -76,7 +83,7 @@ const NextEffects = () => {
               alignSelf: 'center',
             }}
             src={nextEffect2.image}
-            alt="temp agency"
+            alt={nextEffect2.name}
           />
         )}
       </div>

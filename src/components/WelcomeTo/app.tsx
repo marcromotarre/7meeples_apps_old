@@ -5,23 +5,12 @@ import NextEffects from './next-effects.tsx';
 import CityPlans from './city-plans.tsx';
 import ConstructionCards from './contruction-cards.tsx';
 
-import logoRed from '../assets/svg/logo-red.svg';
-import siguenosEnInstagram from '../assets/svg/siguenos-en-instagram.svg';
-
-import missionL1 from '../../assets/svg/welcometo/missions/mission-l1-1.svg';
-import missionL2 from '../../assets/svg/welcometo/missions/mission-l1-1.svg';
-import missionL3 from '../../assets/svg/welcometo/missions/mission-l1-1.svg';
-
 import Nav from '../nav';
 
-import pool from '../../assets/svg/welcometo/pool-manufacturer.svg';
-import surveyor from '../../assets/svg/welcometo/surveyor.svg';
-import temp from '../../assets/svg/welcometo/temp-agency.svg';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
   resetDeck,
-  setCityPlans,
   nextTurn as nextTurnAction,
   reshuffleDeck as reshuffleDeckAction,
   goPrevious as goPreviousAction,
@@ -31,6 +20,7 @@ import {
 } from '../../actions';
 import { cards } from '../../data/deck';
 import { cityPlans as cityPlanCards } from '../../data/city-plans';
+import { useEffect } from 'react';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -39,24 +29,6 @@ const App = () => {
     .map((a) => [Math.random(), a])
     .sort((a, b) => a[0] - b[0])
     .map((a) => a[1]);
-
-  const cityPlans = [
-    cityPlanCards
-      .filter((cityPlan) => cityPlan.level === 1)
-      .map((a) => [Math.random(), a])
-      .sort((a, b) => a[0] - b[0])
-      .map((a) => a[1])[0],
-    cityPlanCards
-      .filter((cityPlan) => cityPlan.level === 2)
-      .map((a) => [Math.random(), a])
-      .sort((a, b) => a[0] - b[0])
-      .map((a) => a[1])[0],
-    cityPlanCards
-      .filter((cityPlan) => cityPlan.level === 3)
-      .map((a) => [Math.random(), a])
-      .sort((a, b) => a[0] - b[0])
-      .map((a) => a[1])[0],
-  ];
 
   dispatch(
     resetDeck({
@@ -67,7 +39,7 @@ const App = () => {
       ],
     }),
   );
-  dispatch(setCityPlans({ cityPlans }));
+
   return (
     <div
       sx={{

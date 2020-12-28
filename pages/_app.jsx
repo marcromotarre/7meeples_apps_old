@@ -8,28 +8,30 @@ import '../styles.css';
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Head>
-        <title>My page title</title>
+        <title>Disable Double-Tap to Zoom</title>
+
         <meta
-          meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </Head>
-      <div
-        className="main-class"
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'stretch',
-          width: '100%',
-          height: '100vh',
-          position: 'fixed',
-        }}
-      >
-        <Component {...pageProps} />
-      </div>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <div
+          className="main-class"
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'stretch',
+            width: '100%',
+            height: '100vh',
+            position: 'fixed',
+          }}
+        >
+          <Component {...pageProps} />
+        </div>
+      </ThemeProvider>
+    </>
   );
 }

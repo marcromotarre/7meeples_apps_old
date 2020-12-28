@@ -2,6 +2,7 @@
 import { jsx, Grid, Flex } from 'theme-ui';
 import logoRed from '../assets/svg/logo-red.svg';
 import siguenosEnInstagram from '../assets/svg/siguenos-en-instagram.svg';
+import { cards } from '../../data/deck';
 
 import { effects } from '../../data/effects';
 import { doors } from '../../data/doors';
@@ -21,10 +22,12 @@ import {
   cancelReset as cancelResetAction,
   addEmptyCardToDiscardDeck as addEmptyCardToDiscardDeckAction,
 } from '../../actions';
+import { useEffect } from 'react';
 
 const ConstructionCards = () => {
   const dispatch = useDispatch();
   const deck = useSelector((state) => state.deck);
+  console.log(deck);
   const discardDeck = useSelector((state) => state.discardDeck);
   const previousMovementsDone = useSelector(
     (state) => state.previousMovementsDone,
@@ -37,9 +40,47 @@ const ConstructionCards = () => {
     subDeck[0] ? subDeck[0].effect : undefined,
   );
 
+  const canGoPrevious = discardDeck[0].length > 0;
+  const canGoNext = deck[0].length > 0;
+
+  const effect0 = effects.find(
+    (effect) => effect.name === actualEffectCards[0],
+  );
+
+  const effect1 = effects.find(
+    (effect) => effect.name === actualEffectCards[1],
+  );
+
+  const effect2 = effects.find(
+    (effect) => effect.name === actualEffectCards[2],
+  );
+
   const next = () => {
-    if (canGoNext && !previousMovementsDone) {
+    if (previousMovementsDone) {
+      return;
+    }
+    if (canGoNext) {
       dispatch(nextTurnAction());
+    } else {
+      const lastThreeCards = discardDeck.map(
+        (singleDeck) => singleDeck[0],
+      );
+      const cardWithoutLastThreeCards = cards.filter((card) => {
+        return !lastThreeCards.includes(card);
+      });
+      const shuffledCards = cardWithoutLastThreeCards
+        .map((a) => [Math.random(), a])
+        .sort((a, b) => a[0] - b[0])
+        .map((a) => a[1]);
+      dispatch(
+        reshuffleDeckAction({
+          cards: [
+            shuffledCards.slice(0, 26),
+            shuffledCards.slice(26, 26 * 2),
+            shuffledCards.slice(26 * 2, 26 * 3),
+          ],
+        }),
+      );
     }
   };
 
@@ -54,9 +95,6 @@ const ConstructionCards = () => {
       dispatch(goPreviousAction());
     }
   };
-
-  const canGoPrevious = discardDeck[0].length > 0;
-  const canGoNext = deck[0].length > 0;
 
   return (
     <div
@@ -143,7 +181,7 @@ const ConstructionCards = () => {
               justifySelf: 'center',
               borderRadius: '10px',
               alignSelf: 'center',
-              border: '1px solid black',
+              border: `1px solid ${effect0.color}`,
               paddingBottom: '80%',
               position: 'relative',
               gridArea: 'effect1',
@@ -157,16 +195,8 @@ const ConstructionCards = () => {
                 alignItems: 'center',
                 width: '80%',
               }}
-              src={
-                effects.find(
-                  (effect) => effect.name === actualEffectCards[0],
-                ).image
-              }
-              alt={
-                effects.find(
-                  (effect) => effect.name === actualEffectCards[0],
-                ).name
-              }
+              src={effect0.image}
+              alt={effect0.name}
             />
           </div>
         )}
@@ -191,7 +221,7 @@ const ConstructionCards = () => {
               justifySelf: 'center',
               borderRadius: '10px',
               alignSelf: 'center',
-              border: '1px solid black',
+              border: `1px solid ${effect1.color}`,
               paddingBottom: '80%',
               position: 'relative',
               gridArea: 'effect2',
@@ -205,16 +235,8 @@ const ConstructionCards = () => {
                 alignItems: 'center',
                 width: '80%',
               }}
-              src={
-                effects.find(
-                  (effect) => effect.name === actualEffectCards[1],
-                ).image
-              }
-              alt={
-                effects.find(
-                  (effect) => effect.name === actualEffectCards[1],
-                ).name
-              }
+              src={effect1.image}
+              alt={effect1.name}
             />
           </div>
         )}
@@ -239,7 +261,7 @@ const ConstructionCards = () => {
               justifySelf: 'center',
               borderRadius: '10px',
               alignSelf: 'center',
-              border: '1px solid black',
+              border: `1px solid ${effect2.color}`,
               paddingBottom: '80%',
               position: 'relative',
               gridArea: 'effect3',
@@ -253,16 +275,8 @@ const ConstructionCards = () => {
                 alignItems: 'center',
                 width: '80%',
               }}
-              src={
-                effects.find(
-                  (effect) => effect.name === actualEffectCards[2],
-                ).image
-              }
-              alt={
-                effects.find(
-                  (effect) => effect.name === actualEffectCards[2],
-                ).name
-              }
+              src={effect2.image}
+              alt={effect2.name}
             />
           </div>
         )}
@@ -289,8 +303,7 @@ const ConstructionCards = () => {
             width: '70%',
             justifySelf: 'center',
             alignSelf: 'center',
-            opacity:
-              canGoNext && !previousMovementsDone ? '1' : '0.2',
+            opacity: !previousMovementsDone ? '1' : '0.2',
             gridArea: 'go-next',
           }}
           src={goNext}
