@@ -9,6 +9,7 @@ div#__next > div > div {
 }
 
 body {
+  touch-action: manipulation;
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
@@ -17,6 +18,10 @@ body {
 
 html {
   height: -webkit-fill-available;
+}
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
 }
 
 @font-face {
