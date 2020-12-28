@@ -22,22 +22,28 @@ import {
   cancelReset as cancelResetAction,
   addEmptyCardToDiscardDeck as addEmptyCardToDiscardDeckAction,
 } from '../../actions';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const ConstructionCards = () => {
   const dispatch = useDispatch();
   const deck = useSelector((state) => state.deck);
-  console.log(deck);
+  const [actualDoorCards, setActualDoorCards] = useState([]);
+  const [actualEffectCards, setActualEffectCards] = useState([]);
+
+  useEffect(() => {
+    const actualDoorCards = deck.map((subDeck) =>
+      subDeck[0] ? subDeck[0].number : undefined,
+    );
+    setActualDoorCards(actualDoorCards);
+    const actualEffectCards = discardDeck.map((subDeck) =>
+      subDeck[0] ? subDeck[0].effect : undefined,
+    );
+    setActualEffectCards(actualEffectCards);
+  }, [deck]);
+
   const discardDeck = useSelector((state) => state.discardDeck);
   const previousMovementsDone = useSelector(
     (state) => state.previousMovementsDone,
-  );
-
-  const actualDoorCards = deck.map((subDeck) =>
-    subDeck[0] ? subDeck[0].number : undefined,
-  );
-  const actualEffectCards = discardDeck.map((subDeck) =>
-    subDeck[0] ? subDeck[0].effect : undefined,
   );
 
   const canGoPrevious = discardDeck[0].length > 0;

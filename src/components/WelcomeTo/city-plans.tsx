@@ -54,7 +54,6 @@ const CityPlans = () => {
     (cityPlan) => cityPlan.level === 3,
   );
 
-  console.log(cityPlanLevel1);
   return (
     <div
       className="city-plans"

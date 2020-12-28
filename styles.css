@@ -12,6 +12,7 @@ body {
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
+  font-family: Quicksand;
 }
 
 html {
@@ -20,5 +21,9 @@ html {
 
 @font-face {
   font-family: 'Quicksand';
-  src: url('/fonts/Quicksand/Quicksand-VariableFont_wght.ttf');
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Quicksand'),
+    url(/fonts/Quicksand/static/Quicksand-Regular.ttf) format('ttf');
 }
